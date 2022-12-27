@@ -3,7 +3,7 @@ const router = express.Router();
 const validUrl = require("valid-url");
 const uniqid = require("uniqid");
 
-const Url = require("../models/Url");
+const Url = require("../models/url");
 
 // @route     POST /api/url/shorten
 // @desc      Create short URL
