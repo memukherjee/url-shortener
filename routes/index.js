@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 
-const Url = require("../models/Url");
+const Url = require("../models/url");
 // @route     GET /
 // @desc      Redirection of short URL
 router.get("/:urlCode", async (req, res) => {
