@@ -7,8 +7,14 @@ const connectDB = require('./config/dbConfig');
 // Connect to database
 connectDB();
 
+// Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+
+// Routes
+app.use('/', require('./routes/index'));
+app.use('/api/url', require('./routes/url'));
 
 
 app.listen(process.env.PORT, () => {
