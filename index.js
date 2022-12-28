@@ -5,7 +5,6 @@ const connectDB = require("./config/dbConfig");
 
 // Middleware
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.use("/", require("./routes/index"));
