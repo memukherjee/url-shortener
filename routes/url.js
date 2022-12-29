@@ -8,9 +8,15 @@ const Url = require("../models/url");
 // @route     POST /api/url/shorten
 // @desc      Create short URL
 router.post("/shorten", async (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   const { longUrl, customUrlCode } = req.body;
   const baseUrl = process.env.BASE_URL;
+
+
+  // Check if it is already a shortened url
+  if (longUrl.includes(baseUrl)) {
+    return res.status(401).json("URL already shortened");
+  }
 
   // Check base url
   if (!validUrl.isUri(baseUrl)) {
